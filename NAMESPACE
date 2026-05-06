@@ -1,0 +1,21 @@
+exportPattern("^[A-Z]")
+export(distribution)
+importFrom(Rcpp, evalCpp)
+importFrom("KSgeneral", "ks_c_cdf_Rcpp")
+importFrom("stats", "ecdf", "optim", "quantile", "runif", "uniroot")
+importFrom("utils", "combn", "write.table")
+useDynLib(HausdorffGoF, .registration = TRUE)
+
+S3method(Hausdorff_test, NullDist)
+S3method(Hausdorff_test, "function")
+S3method(Hausdorff_test, numeric)
+S3method(Hausdorff_test, matrix)
+S3method(Hausdorff_test, list)
+
+S3method(Hausdorff_stat, NullDist)
+S3method(Hausdorff_stat, "function")
+S3method(Hausdorff_stat, numeric)
+S3method(Hausdorff_stat, matrix)
+S3method(Hausdorff_stat, list)
+
+S3method(print, NullDist)
